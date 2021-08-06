@@ -1,6 +1,5 @@
 #AutoApiS 多功能版
 name: Auto Api Super
-
 on: 
   release:
     types: [published]
@@ -17,14 +16,13 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
     steps:
     - name: Checkout
       uses: actions/checkout@master
     - name: Set up Python #安装python
       uses: actions/setup-python@v1
       with:
-        python-version: 3.6
+        python-version: 3.8
     - name: Install requests #安装requests
       run: |
         pip install requests
