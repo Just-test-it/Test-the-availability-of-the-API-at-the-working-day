@@ -6,15 +6,6 @@ import json,sys,time,random
 
 id_list2 = [1]
 secret_list2 = [1]
-
-
-
-
-
-
-
-
-
 config_list = {'每次轮数':6,
 	       '是否启动随机时间':'Y','延时范围起始':600,'结束':1200,
 	       '是否开启随机api顺序':'Y',
