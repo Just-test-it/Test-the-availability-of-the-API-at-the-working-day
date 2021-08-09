@@ -1,8 +1,8 @@
 #更新refresh_token
 name: update refresh_token
-
-on: 
+on:
   release:
+    workflow_dispatch:
     types: [published]
   push:
     tags:
