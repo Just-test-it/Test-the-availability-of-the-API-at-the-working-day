@@ -210,7 +210,7 @@ if config_list['是否开启测试'] == 'Y':
     secret_lists=secret_list2
     main2()
 else:
-    if config_list['是否开启备用应用'] == 'N':
+    if config_list['是否开启备用应用'] == 'Y':
         if buconfig == 'Y':
             id_lists=id_list
             secret_lists=secret_list
