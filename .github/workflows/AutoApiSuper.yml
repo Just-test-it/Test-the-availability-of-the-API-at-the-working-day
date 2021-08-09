@@ -1,5 +1,4 @@
-#AutoApiS 多功能版
-name: Auto Api Super
+name: Test the availability of the API at the working day
 on: 
   release:
     types: [published]
