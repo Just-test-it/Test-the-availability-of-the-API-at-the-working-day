@@ -1,6 +1,5 @@
 #更新api排序
 name: update randapi
-
 on: 
   release:
     types: [published]
@@ -13,6 +12,8 @@ on:
     - cron: "45 2 15 * *"
   watch:
     types: [started]
+  workflow_dispatch:
+
     
 jobs:
   build:
