@@ -16,6 +16,8 @@ schedules:
 steps:
 - checkout: self
   persistCredentials: true
+  clean: true
+
 - task: UsePythonVersion@0
   inputs:
     versionSpec: '3.8'
