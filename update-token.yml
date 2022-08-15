@@ -7,7 +7,7 @@ trigger: none
 pool:
   vmImage: ubuntu-latest
 schedules:
-- cron: "45 0 * * *"
+- cron: "0 0 9-21 * * ? "
   displayName: update-token
   branches:
     include:
