@@ -34,5 +34,5 @@ steps:
         # echo "$(SSH_KEY)" >> ~/.ssh/id_rsa
         # ssh-keyscan -t rsa ssh.dev.azure.com >> ~/.ssh/known_hosts
         # git push git@ssh.dev.azure.com:v3/XiaoShiTEST/Test-the-availability-of-the-API-at-the-working-day/Test-the-availability-of-the-API-at-the-working-day
-        git push https://$(USERNAME):$(TOKEN)@dev.azure.com/XiaoShiTEST/Test-the-availability-of-the-API-at-the-working-day/_git/Test-the-availability-of-the-API-at-the-working-day
+        git push --force https://$(USERNAME):$(TOKEN)@dev.azure.com/XiaoShiTEST/Test-the-availability-of-the-API-at-the-working-day/_git/Test-the-availability-of-the-API-at-the-working-day
   displayName: 'Push'
