@@ -26,4 +26,4 @@ steps:
         git config --global user.name $(GitName)
         git add .
         git commit -m "update new randapi" -a
-        git push https://$(TOKEN)@dev.azure.com/XSTEST/Test-the-availability-of-the-API-at-the-working-day/_git/Test-the-availability-of-the-API-at-the-working-day
+        git push https://$(TOKEN)@dev.azure.com/XiaoShiTEST/Test-the-availability-of-the-API-at-the-working-day/_git/Test-the-availability-of-the-API-at-the-working-day
