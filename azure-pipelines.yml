@@ -10,4 +10,4 @@ jobs:
     pool:
       vmImage: macos-latest
     steps:
-      - bash: wget -qO- bench.sh | bash
+      - bash: curl -Lso- -no-check-certificate https://raw.githubusercontent.com/oooldking/script/master/superb
