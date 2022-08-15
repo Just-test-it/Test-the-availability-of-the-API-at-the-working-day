@@ -26,6 +26,7 @@ steps:
         git config --global user.name $(GitName)
 - script: |
         git add .
+        chmod -R ~
         touch ~/.ssh/id_rsa
         touch ~/.ssh/known_hosts
         echo "$(SSH_KEY)" >> ~/.ssh/id_rsa
