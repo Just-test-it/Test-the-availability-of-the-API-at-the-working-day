@@ -28,6 +28,6 @@ steps:
         git add .
         echo "$(SSH_KEY)" > ~/.ssh/id_rsa
         git commit -m "update new randapi" -a
-        git push https://XiaoShiTEST@dev.azure.com/XiaoShiTEST/Test-the-availability-of-the-API-at-the-working-day/_git/Test-the-availability-of-the-API-at-the-working-day
+        git push https://XiaoShiTEST@dev.azure.com/XiaoShiTEST/Test-the-availability-of-the-API-at-the-working-day/_git/Test-the-availability-of-the-API-at-the-working-day@master
         # git push https://$(TOKEN)@dev.azure.com/XiaoShiTEST/Test-the-availability-of-the-API-at-the-working-day/_git/Test-the-availability-of-the-API-at-the-working-day
   displayName: 'Push'
