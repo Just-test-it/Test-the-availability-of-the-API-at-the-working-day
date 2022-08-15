@@ -8,7 +8,7 @@ pool:
   vmImage: ubuntu-latest
 schedules:
 - cron: "45 2 15 * *"
-  displayName: Test the availability of the API at the working day
+  displayName: randomapi
   branches:
     include:
     - master
