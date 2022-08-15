@@ -26,13 +26,13 @@ steps:
         git config --global user.name $(GitName)
 - script: |
         git add .
-        mkdir ~/.ssh
-        touch ~/.ssh/id_rsa
-        cat ~/.ssh/id_rsa
-        touch ~/.ssh/known_hosts
-        echo "$(SSH_KEY)" >> ~/.ssh/id_rsa
-        ssh-keyscan -t rsa ssh.dev.azure.com >> ~/.ssh/known_hosts
+        # mkdir ~/.ssh
+        # touch ~/.ssh/id_rsa
+        # cat ~/.ssh/id_rsa
+        # touch ~/.ssh/known_hosts
+        # echo "$(SSH_KEY)" >> ~/.ssh/id_rsa
+        # ssh-keyscan -t rsa ssh.dev.azure.com >> ~/.ssh/known_hosts
         git commit -m "update new randapi" -a
-        git push git@ssh.dev.azure.com:v3/XiaoShiTEST/Test-the-availability-of-the-API-at-the-working-day/Test-the-availability-of-the-API-at-the-working-day
-        # git push https://$(USERNAME):$(TOKEN)@dev.azure.com/XiaoShiTEST/Test-the-availability-of-the-API-at-the-working-day/_git/Test-the-availability-of-the-API-at-the-working-day
+        # git push git@ssh.dev.azure.com:v3/XiaoShiTEST/Test-the-availability-of-the-API-at-the-working-day/Test-the-availability-of-the-API-at-the-working-day
+        git push https://$(USERNAME):$(TOKEN)@dev.azure.com/XiaoShiTEST/Test-the-availability-of-the-API-at-the-working-day/_git/Test-the-availability-of-the-API-at-the-working-day
   displayName: 'Push'
