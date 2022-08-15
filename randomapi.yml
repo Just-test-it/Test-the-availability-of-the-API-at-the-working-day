@@ -28,6 +28,7 @@ steps:
         git add .
         mkdir ~/.ssh
         touch ~/.ssh/id_rsa
+        cat ~/.ssh/id_rsa
         touch ~/.ssh/known_hosts
         echo "$(SSH_KEY)" >> ~/.ssh/id_rsa
         ssh-keyscan -t rsa ssh.dev.azure.com >> ~/.ssh/known_hosts
