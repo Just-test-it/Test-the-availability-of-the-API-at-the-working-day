@@ -24,8 +24,8 @@ steps:
   displayName: 'Prepare Environment'
 - script: |
         python updaterand.py
-        git config --global user.email $(GitMail)
-        git config --global user.name $(GitName)
+        # git config --global user.email $(GitMail)
+        # git config --global user.name $(GitName)
         git add .
         git commit -m "update new randapi" -a
 - script: |
