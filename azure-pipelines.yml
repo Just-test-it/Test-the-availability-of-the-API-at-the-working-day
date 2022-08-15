@@ -10,5 +10,11 @@ jobs:
     pool:
       vmImage: macos-latest
     steps:
-      - bash: homebrew install neofetch -y
-      - bash: sudo neofetch
+      - script: echo -n "CPU型号:"
+      - bash: sysctl -n machdep.cpu.brand_string
+      - bash: echo -n "CPU核心数:"
+      - bash: sysctl -n machdep.cpu.core_count
+      - bash: echo -n "CPU线程数:"
+      - bash: sysctl -n machdep.cpu.thread_count
+      - bash: echo "其它信息："
+      - bash: system_profiler SPDisplaysDataType SPMemoryDataType SPStorageDataType | grep 'Graphics/Displays:\|Chipset Model:\|VRAM (Total):\|Resolution:\|Memory Slots:\|Size:\|Speed:\|Storage:\|Media Name:\|Medium Type:'
