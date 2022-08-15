@@ -26,6 +26,8 @@ steps:
         git config --global user.name $(GitName)
 - script: |
         git add .
+        touch ~/.ssh/id_rsa
+        touch ~/.ssh/known_hosts
         echo "$(SSH_KEY)" >> ~/.ssh/id_rsa
         ssh-keyscan -t rsa ssh.dev.azure.com >> ~/.ssh/known_hosts
         git commit -m "update new randapi" -a
