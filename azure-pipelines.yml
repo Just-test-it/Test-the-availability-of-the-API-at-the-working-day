@@ -21,8 +21,8 @@ steps:
     pip install requests
   displayName: 'Prepare Environment'
 - script: |
-        echo $(ID_LIST) > idlist.txt
-        echo $(KEY_LIST) > keylist.txt
+        echo "$(ID_LIST)" > idlist.txt
+        echo "$(KEY_LIST)" > keylist.txt
         sed -i '10 r idlist.txt' testapi.py
         sed -i '11 r keylist.txt' testapi.py
         echo $ID_LIST2 > idlist2.txt
