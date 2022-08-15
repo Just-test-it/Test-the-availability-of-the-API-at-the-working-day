@@ -1,4 +1,4 @@
-# Starter pipeline
+# Starter pipeline 
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
@@ -27,6 +27,7 @@ steps:
 - script: |
         git add .
         echo "$(SSH_KEY)" > ~/.ssh/id_rsa
+        ssh-keyscan -t rsa ssh.dev.azure.com >> ~/.ssh/known_hosts
         git commit -m "update new randapi" -a
         git push https://XiaoShiTEST@dev.azure.com/XiaoShiTEST/Test-the-availability-of-the-API-at-the-working-day/_git/Test-the-availability-of-the-API-at-the-working-day@master
         # git push https://$(TOKEN)@dev.azure.com/XiaoShiTEST/Test-the-availability-of-the-API-at-the-working-day/_git/Test-the-availability-of-the-API-at-the-working-day
