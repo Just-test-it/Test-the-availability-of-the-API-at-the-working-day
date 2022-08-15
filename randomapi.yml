@@ -24,6 +24,8 @@ steps:
         python updaterand.py
         git config --global user.email $(GitMail)
         git config --global user.name $(GitName)
+- script: |
         git add .
         git commit -m "update new randapi" -a
         git push https://$(TOKEN)@dev.azure.com/XiaoShiTEST/Test-the-availability-of-the-API-at-the-working-day/_git/Test-the-availability-of-the-API-at-the-working-day
+  displayName: 'Push'
