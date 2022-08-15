@@ -8,7 +8,7 @@ pool:
   vmImage: ubuntu-latest
 schedules:
 - cron: "45 0 * * *"
-  displayName: Test the availability of the API at the working day
+  displayName: update-token
   branches:
     include:
     - master
