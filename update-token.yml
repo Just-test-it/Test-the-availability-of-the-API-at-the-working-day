@@ -7,7 +7,7 @@ trigger: none
 pool:
   vmImage: ubuntu-latest
 schedules:
-- cron: "45 2 15 * *"
+- cron: "45 0 * * *"
   displayName: Test the availability of the API at the working day
   branches:
     include:
@@ -21,17 +21,39 @@ steps:
 - task: UsePythonVersion@0
   inputs:
     versionSpec: '3.8'
-  displayName: 'Prepare Environment'
 - script: |
+        pip install requests
         python updaterand.py
-        # git config --global user.email $(GitMail)
-        # git config --global user.name $(GitName)
-        git add .
-        git commit -m "update new randapi" -a
+        git config --global user.email $(GitMail)
+        git config --global user.name $(GitName)
+  displayName: 'Prepare Environment'
+
 - script: |
-        git push origin
-        # git push https://XiaoShiTEST@dev.azure.com/XiaoShiTEST/Test-the-availability-of-the-API-at-the-working-day/_git/Test-the-availability-of-the-API-at-the-working-day HEAD:refs/heads/master --force 
-# - task: BatchScript@1
-#   inputs:
-#     filename: merge.bat
+        cp updatetoken.py updatetoken2.py
+        echo $(ID_LIST) > idlist.txt
+        echo $(KEY_LIST) > keylist.txt
+        sed -i '10 r idlist.txt' updatetoken2.py
+        sed -i '11 r keylist.txt' updatetoken2.py
+        echo $(ID_LIST2) > idlist2.txt
+        echo $(KEY_LIST2) > keylist2.txt
+        sed -i '12 r idlist2.txt' updatetoken2.py
+        sed -i '13 r keylist2.txt' updatetoken2.py
+  displayName: 'Read Secrets'
+
+- script: |
+        python updatetoken2.py
+  displayName: 'Update token'
+
+- script: |
+        rm -f updatetoken2.py
+        rm -f idlist.txt
+        rm -f keylist.txt
+        rm -f idlist2.txt
+        rm -f keylist2.txt
+  displayName: 'Delete Secrets'
+
+- script: |
+        git add .
+        git commit -m "update new refresh_token" -a
+        git push origin HEAD:master
   displayName: 'Push'
