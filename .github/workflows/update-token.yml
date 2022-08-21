@@ -33,8 +33,6 @@ jobs:
         KEY_LIST: ${{ secrets.KEY_LIST }} # secrets_key 提供
         ID_LIST2: ${{ secrets.ID_LIST2 }} # secrets_id 提供
         KEY_LIST2: ${{ secrets.KEY_LIST2 }} # secrets_key 提供
-        GitMail: ${{ secrets.GitMail }}
-        GitName: ${{ secrets.GitName }}
       run: | 
         cp updatetoken.py updatetoken2.py
         echo $ID_LIST > idlist.txt
@@ -56,7 +54,7 @@ jobs:
         rm -f idlist2.txt
         rm -f keylist2.txt
     - name: Commit #上传新的refresh_token到仓库
-        env: 
+      env: 
         GitMail: ${{ secrets.GitMail }}
         GitName: ${{ secrets.GitName }}
       run: |
