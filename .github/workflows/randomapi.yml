@@ -30,9 +30,12 @@ jobs:
       run: | 
         python updaterand.py
     - name: Commit #上传新的排序到仓库
+      env:
+        GitMail: ${{ secrets.GitMail }}
+        GitName: ${{ secrets.GitName }}
       run: |
-        git config --global user.email xiaoshi03@outlook.com
-        git config --global user.name xsaction
+        git config --global user.email $GitMail
+        git config --global user.name $GitName
         git add .
         git commit -m "update new randapi" -a
     - name: Push changes
